@@ -1,0 +1,4 @@
+EMFtoCSP LOGS
+-------------
+2014/10/31 16:11:43 class fr.inria.atlanmod.emftocsp.ui.main.commands.WizardHandler: INFO: Starting EMFtoCSP GUI
+2014/10/31 16:12:05 class fr.inria.atlanmod.emftocsp.ui.wizards.impl.ModelSelectedWizard: INFO: Closing EMFtoCSP

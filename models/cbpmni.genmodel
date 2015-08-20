@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ca.uqam.latece.cbpmn/src" modelPluginID="ca.uqam.latece.cbpmn"
+    modelName="Cpmni" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    usedGenPackages="cbpmn.genmodel#//cbpmn" operationReflection="true" importOrganizing="true">
+  <foreignModel>cbpmni.ecore</foreignModel>
+  <genPackages prefix="Cbpmni" disposableProviderFactory="true" childCreationExtenders="true"
+      ecorePackage="cbpmni.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cbpmni.ecore#//FlowNodeStatusType">
+      <genEnumLiterals ecoreEnumLiteral="cbpmni.ecore#//FlowNodeStatusType/INACTIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmni.ecore#//FlowNodeStatusType/READY"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmni.ecore#//FlowNodeStatusType/RUNNING"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmni.ecore#//FlowNodeStatusType/COMPLETED"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmni.ecore#//FlowNodeStatusType/ABORTED"/>
+    </genEnums>
+    <genClasses ecoreClass="cbpmni.ecore#//ProcessInst">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//ProcessInst/processDef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//ProcessInst/tokens"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmni.ecore#//ProcessInst/flowNodes"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmni.ecore#//ProcessInst/dataObjects"/>
+      <genOperations ecoreOperation="cbpmni.ecore#//ProcessInst/setupProcessInstance"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmni.ecore#//FlowNodeInst">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//FlowNodeInst/nodeDef"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmni.ecore#//FlowNodeInst/status"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//FlowNodeInst/next"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmni.ecore#//ActivityInst">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//ActivityInst/activityDef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//ActivityInst/inputs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//ActivityInst/outputs"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmni.ecore#//EventInst">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//EventInst/eventDef"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmni.ecore#//SplitInst">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//SplitInst/splitDef"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmni.ecore#//SplitInst/branches"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmni.ecore#//BranchInst">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//BranchInst/branchDef"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmni.ecore#//DataObjectInst">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmni.ecore#//DataObjectInst/dataObjectDef"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

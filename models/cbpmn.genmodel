@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ca.uqam.latece.cbpmn/src" modelPluginID="ca.uqam.latece.cbpmn"
+    modelName="Cbpmn" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="6.0" copyrightFields="false"
+    providerRootExtendsClass="" tableProviders="true" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>cbpmn.ecore</foreignModel>
+  <genPackages prefix="Cbpmn" disposableProviderFactory="true" contentTypeIdentifier=""
+      ecorePackage="cbpmn.ecore#/" publicationLocation="">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cbpmn.ecore#//ActivityType">
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//ActivityType/MANUAL"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//ActivityType/RECEIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//ActivityType/SEND"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//ActivityType/SERVICE"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//ActivityType/USER"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//ActivityType/BUSINESSRULE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cbpmn.ecore#//EventType">
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//EventType/EEnumLiteral0"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cbpmn.ecore#//DecisionType">
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//DecisionType/EXCLUSIVE"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//DecisionType/INCLUSIVE"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cbpmn.ecore#//GatewayType">
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//GatewayType/SPLIT"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//GatewayType/JOIN"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cbpmn.ecore#//DataObjectType">
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//DataObjectType/PHYSICAL"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//DataObjectType/INFORMATIONAL"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="cbpmn.ecore#//FlowNodeInstanceStatus">
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//FlowNodeInstanceStatus/INIT"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//FlowNodeInstanceStatus/STARTED"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//FlowNodeInstanceStatus/INTERRUPTED"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//FlowNodeInstanceStatus/SUCCESS"/>
+      <genEnumLiterals ecoreEnumLiteral="cbpmn.ecore#//FlowNodeInstanceStatus/FAILED"/>
+    </genEnums>
+    <genDataTypes ecoreDataType="cbpmn.ecore#//CbpmnIterator"/>
+    <genClasses ecoreClass="cbpmn.ecore#//ProcessModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//ProcessModel/mainBranch"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//ProcessModel/processInvariants"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//ProcessModel/name"/>
+      <genOperations ecoreOperation="cbpmn.ecore#//ProcessModel/iterator">
+        <genParameters ecoreParameter="cbpmn.ecore#//ProcessModel/iterator/iterator"/>
+      </genOperations>
+      <genOperations ecoreOperation="cbpmn.ecore#//ProcessModel/iterator.1">
+        <genParameters ecoreParameter="cbpmn.ecore#//ProcessModel/iterator.1/iterator"/>
+        <genParameters ecoreParameter="cbpmn.ecore#//ProcessModel/iterator.1/start"/>
+      </genOperations>
+      <genOperations ecoreOperation="cbpmn.ecore#//ProcessModel/getRandomStartEvent"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//Activity">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//Activity/preConditions"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//Activity/postConditions"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//Activity/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//Activity/outputs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//Activity/invariabilityClauses"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//Branch">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//Branch/nodes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//Branch/default"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//Branch/entryConditions"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cbpmn.ecore#//Branch/gateway"/>
+      <genOperations ecoreOperation="cbpmn.ecore#//Branch/getFirstNode"/>
+      <genOperations ecoreOperation="cbpmn.ecore#//Branch/getLastNode"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//DecisionGateway">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//DecisionGateway/type"/>
+      <genOperations ecoreOperation="cbpmn.ecore#//DecisionGateway/addBranchWithCondition">
+        <genParameters ecoreParameter="cbpmn.ecore#//DecisionGateway/addBranchWithCondition/branch"/>
+        <genParameters ecoreParameter="cbpmn.ecore#//DecisionGateway/addBranchWithCondition/condition"/>
+        <genParameters ecoreParameter="cbpmn.ecore#//DecisionGateway/addBranchWithCondition/default"/>
+      </genOperations>
+      <genOperations ecoreOperation="cbpmn.ecore#//DecisionGateway/getDefaultBranch"/>
+      <genOperations ecoreOperation="cbpmn.ecore#//DecisionGateway/getRandomBranch"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="cbpmn.ecore#//FlowNode">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cbpmn.ecore#//FlowNode/branch"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//FlowNode/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmn.ecore#//FlowNode/next"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmn.ecore#//FlowNode/previous"/>
+      <genFeatures property="None" children="true" createChild="true" propertyCategory=""
+          propertyDescription="" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmn.ecore#//FlowNode/inputs"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//OCLConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//OCLConstraint/constraintName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//OCLConstraint/constraintStr"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cbpmn.ecore#//OCLConstraint/branch"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//Event">
+      <genFeatures property="Readonly" children="true" createChild="true" propertyCategory=""
+          propertyDescription="" ecoreFeature="ecore:EReference cbpmn.ecore#//Event/trigger"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//ParallelGateway"/>
+    <genClasses image="false" ecoreClass="cbpmn.ecore#//SplitGateway">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//SplitGateway/branches"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//DataObjectReference">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//DataObjectReference/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//DataObjectReference/lowerBound"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//DataObjectReference/higherBound"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmn.ecore#//DataObjectReference/dataObjectClass"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//ProcessInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmn.ecore#//ProcessInstance/processModel"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//ProcessInstance/executedNodes"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//ProcessInstance/id"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cbpmn.ecore#//ProcessInstance/dataObjects"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//FlowNodeInstance">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmn.ecore#//FlowNodeInstance/nodeDef"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmn.ecore#//FlowNodeInstance/inputs"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmn.ecore#//FlowNodeInstance/outputs"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference cbpmn.ecore#//FlowNodeInstance/processInstance"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cbpmn.ecore#//FlowNodeInstance/status"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//DataObject">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cbpmn.ecore#//DataObject/type"/>
+    </genClasses>
+    <genClasses ecoreClass="cbpmn.ecore#//StartEvent"/>
+    <genClasses ecoreClass="cbpmn.ecore#//EndEvent"/>
+    <genClasses ecoreClass="cbpmn.ecore#//IntermediateEvent"/>
+  </genPackages>
+</genmodel:GenModel>

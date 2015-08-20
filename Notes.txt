@@ -1,0 +1,11 @@
+
+
+- The metamodel handles only block structured models: 
+	- Every split gateway must have a corresponding merge gateway
+	- Every flownode that is not a gateway have exactly one incoming control flow and one outgoing control flow
+
+- The model does not handle loops: since an activity cannot have more than one inflow, 
+there is not way to model loops. 
+
+- Assumed that input and output names are well formed: each name is unique, each output name is unique and if
+an output name exists also as an input, they reference the same data object.
